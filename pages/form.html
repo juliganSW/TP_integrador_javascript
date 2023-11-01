@@ -87,24 +87,27 @@
         <div class="row text-center">
           <div class="col-12 d-flex justify-content-center">
             <div>
-            <form class="booking" id="" action="" method="">
+            <form class="booking" id="form" action="" method="" onsubmit="validarFormulario(event)">
               <div class="mb-3">
                 <legend>Reserva Online</legend>
                 <figure>
                   <img src="../resources/img/complejo.png" alt="">
                 </figure>
-                <label for="exampleInputName" class="form-label">Nombre:</label>
-                <input type="text" class="form-control form-control-sm" id="exampleInputName"
+                <label for="exampleInputName" class="form-label">Nombre<span
+                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                <input type="text" class="form-control form-control-sm" id="name"
                   placeholder="Escriba aqui...">
               </div>
               <div class="mb-3">
-                <label for="exampleInputLastName" class="form-label">Apellido:</label>
-                <input type="text" class="form-control form-control-sm" id="exampleInputLastName"
+                <label for="lastName" class="form-label">Apellido<span
+                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                <input type="text" class="form-control form-control-sm" id="lastName"
                   placeholder="Escriba aqui...">
               </div>
 
               <div class="input-group-room mb-3">
-                <label for="room" class="form-label">Habitacion:</label>
+                <label for="room" class="form-label">Habitacion<span
+                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
                 <select class="form-select form-select-sm" name="room">
                   <option selected>Tipo de Habitacion</option>
                   <option value="1">Clasica</option>
@@ -114,8 +117,9 @@
               </div>
               <div class="row">
                 <div class="col mb-3">
-                  <label for="examplePerson" class="form-label">Adultos:</label>
-                  <input type="number" class="form-control form-control-sm" id="examplePerson" min="0">
+                  <label for="adulto" class="form-label">Adultos<span
+                    class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                  <input type="number" class="form-control form-control-sm" id="adulto" min="1">
                 </div>
                 <div class="col mb-3">
                   <label for="exampleKids" class="form-label">Niños:</label>
@@ -123,15 +127,22 @@
                 </div>
               </div>
               <div class="mb-3">
-                <label for="exampleInpuTel" class="form-label">Telefono:</label>
-                <input type="number" class="form-control form-control-sm" id="exampleInputTel" min="0">
+                <label for="phone" class="form-label">Telefono<span
+                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                <input type="number" class="form-control form-control-sm" id="phone" min="0">
               </div>
               <div class="mb-3">
-                <label for="exampleInpuMail" class="form-label">Email:</label>
-                <input type="email" class="form-control form-control-sm" id="exampleInputMail"
+                <label for="exampleInpuMail" class="form-label">Email<span
+                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                <input type="email" class="form-control form-control-sm" id="email"
                   placeholder="Escriba aqui...">
               </div>
-              <button type="button" class="btn btn-outline-light">Enviar</button>
+              <p>Los campos con asteriscos(<span class="asterisk">*</span>) son obligatorios</p>
+              <br>
+              <input type="checkbox" name="terminos" id="checkbox"> Acepto los Términos y Condiciones
+              <br><br>
+              <button type="reset" class="btn btn-outline-light">Reset</button>
+              <button type="submit" class="btn btn-outline-light">Enviar</button>
             </form>
             
           </div>
@@ -153,6 +164,37 @@
         </div>
       </div>
     </section>
+   
+    <!-- Ventana  modal -->
+    <section class="confirm">
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <p id="modal-message">Ya casi está listo!!</p>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="celda-promo">
+                  <h2>RESIDENTES</h2>
+                  <p>DESCUENTO</p>
+                  <h2><em>10%</em></h2>
+                  <p>Por persona</p>
+                </div>
+
+              </div>
+              <div class="col">
+                <div class="celda-promo">
+                  <h2>NO RESIDENTES</h2>
+                  <p>DESCUENTO</p>
+                  <h2><em>20%</em></h2>
+                  <p>Por persona</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
 
     <section class="advert">
       <div class="container-fluid bg-dark">
@@ -238,8 +280,13 @@
       </small>
     </div>
   </footer>
+ 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
+    <script src="../js/validation_form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../js/datepicker.js"></script>
+    
 </body>
 </html>
