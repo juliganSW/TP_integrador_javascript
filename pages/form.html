@@ -110,9 +110,9 @@
                   class="asterisk">&nbsp;*</span>&nbsp;:</label>
                 <select class="form-select form-select-sm" name="room">
                   <option selected>Tipo de Habitacion</option>
-                  <option value="1">Clasica</option>
-                  <option value="2">Suite</option>
-                  <option value="3">Ejecutiva</option>
+                  <option value="Clasica">Clasica</option>
+                  <option value="Suite">Suite</option>
+                  <option value="Ejecutiva">Ejecutiva</option>
                 </select>
               </div>
               <div class="row">
@@ -122,8 +122,8 @@
                   <input type="number" class="form-control form-control-sm" id="adulto" min="1">
                 </div>
                 <div class="col mb-3">
-                  <label for="exampleKids" class="form-label">Niños:</label>
-                  <input type="number" class="form-control form-control-sm" id="exampleKids" min="0">
+                  <label for="kids" class="form-label">Niños:</label>
+                  <input type="number" class="form-control form-control-sm" id="kids" min="0">
                 </div>
               </div>
               <div class="mb-3">
@@ -168,29 +168,34 @@
     <!-- Ventana  modal -->
     <section class="confirm">
       <div id="modal" class="modal">
-        <div class="modal-content">
+        <div class="content">
           <span class="close" onclick="closeModal()">&times;</span>
           <p id="modal-message">Ya casi está listo!!</p>
-          <div class="container">
+          <div class="container text-center">
             <div class="row">
               <div class="col">
-                <div class="celda-promo">
-                  <h2>RESIDENTES</h2>
+                <div class="celda-promo" id="residente" data-descuento="0.1">
+                  <h2>RESIDENTE</h2>
                   <p>DESCUENTO</p>
                   <h2><em>10%</em></h2>
                   <p>Por persona</p>
                 </div>
-
               </div>
               <div class="col">
-                <div class="celda-promo">
-                  <h2>NO RESIDENTES</h2>
+                <div class="celda-promo" id="no-residente" data-descuento="0.2">
+                  <h2>NO RESIDENTE</h2>
                   <p>DESCUENTO</p>
                   <h2><em>20%</em></h2>
                   <p>Por persona</p>
                 </div>
               </div>
             </div>
+            <div class="input-group input-group-lg mt-5 mb-5">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Total a Pagar:</span>
+              <input type="text" class="form-control"  id="aply-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+            </div>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+            <button type="button" class="btn btn-secondary">Aplicar</button>
           </div>
         </div>
       </div>

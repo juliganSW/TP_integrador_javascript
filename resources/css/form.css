@@ -325,11 +325,11 @@ select.form-select {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.modal-content {
-  background-color: #fff;
+.content {
+  background-color: rgba(255, 255, 255, 0.7);
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid grey;
   width: 80%;
   max-width: 600px;
   position: relative;
@@ -338,13 +338,25 @@ select.form-select {
 .celda-promo {
   border: 2px solid rgba(139, 139, 0, 0.662);
   box-shadow: 0 0 10px rgba(139, 139, 0, 0.662);
+  
   padding: 1rem;
   text-align: center;
+  cursor: pointer;
+  transition: 0.8s;
+  
+  }
+  .celda-promo:hover{
+  
+  border: 2px solid rgba(139, 0, 0, 0.662); /* Bordó con la misma opacidad */
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.662);
+ 
+  /* transform: scale(1.1);
+  transition: 0.5s; */
+
   }
 .celda-promo h2 {
   font-size: 26px;
-  
-  }
+}
 
 
 .close {
