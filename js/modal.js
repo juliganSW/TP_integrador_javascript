@@ -1,4 +1,4 @@
-// JavaScript
+
 const btnModals = document.querySelectorAll('.btnModal');
 const closeModalButtons = document.querySelectorAll('.closeModal');
 
