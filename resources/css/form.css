@@ -357,6 +357,12 @@ select.form-select {
   cursor: pointer;
   transition: 0.8s;
 }
+/*Ajuste con media query para pantallas pequeñas*/
+@media only screen and (max-width:768px){
+  .celda-promo{
+    margin-top: 1rem;
+  }
+}
 
 .celda-promo:hover {
   border: 2px solid rgba(139, 139, 0, 0.662);
@@ -412,16 +418,10 @@ select.form-select {
 	cursor:pointer;
 }
 
-/* .btn-submit:hover{
-	background-color: #A2EAD4;
-	color: #fff;
-} */
-
 .btn-submit.loading{
 	width: 50px!important;
 	border-radius: 100%;
 	border-color: #999;
-	
 }
 
 .btn-submit.loading span{

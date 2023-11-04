@@ -60,8 +60,8 @@
       <form>
         <div class="row justify-content-center p-md-2 check">
           <div class="col-md-2 d-flex align-items-center mb-2 form-group">
-           <i class="fa-solid fa-calendar-days"></i>
-           <input type="text" class="form-control" id="dateInput1" placeholder="Check-In">
+            <i class="fa-solid fa-calendar-days"></i>
+            <input type="text" class="form-control" id="dateInput1" placeholder="Check-In">
           </div>
           <div class="col-md-2 d-flex align-items-center mb-2 form-group">
             <i class="fa-solid fa-calendar-days"></i>
@@ -87,92 +87,85 @@
         <div class="row text-center">
           <div class="col-12 d-flex justify-content-center">
             <div>
-            <form class="booking" id="form" action="" method="" onsubmit="validarFormulario(event)" novalidate>
-              <div class="mb-3">
-                <legend>Reserva Online</legend>
-                <figure>
-                  <img src="../resources/img/complejo.png" alt="">
-                </figure>
-                <label for="exampleInputName" class="form-label">Nombre<span
-                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
-                <input type="text" class="form-control form-control-sm" id="name"
-                  placeholder="Escriba aqui...">
+              <form class="booking" id="form" action="" method="" onsubmit="validarFormulario(event)" novalidate>
+                <div class="mb-3">
+                  <legend>Reserva Online</legend>
+                  <figure>
+                    <img src="../resources/img/complejo.png" alt="">
+                  </figure>
+                  <label for="exampleInputName" class="form-label">Nombre<span
+                      class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                  <input type="text" class="form-control form-control-sm" id="name" placeholder="Escriba aqui...">
                   <span id="mensajeNombre"></span>
-              </div>
-              <div class="mb-3">
-                <label for="lastName" class="form-label">Apellido<span
-                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
-                <input type="text" class="form-control form-control-sm" id="lastName"
-                  placeholder="Escriba aqui...">
+                </div>
+                <div class="mb-3">
+                  <label for="lastName" class="form-label">Apellido<span class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                  <input type="text" class="form-control form-control-sm" id="lastName" placeholder="Escriba aqui...">
                   <span id="mensajeApellido"></span>
-              </div>
+                </div>
 
-              <div class="input-group-room mb-3">
-                <label for="rom" class="form-label">Habitacion<span
-                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
-                <select class="form-select form-select-sm" name="room" id="room">
-                  <option selecte value="Tipo de Habitacion">Tipo de Habitacion</option>
-                  <option value="Clasica">Clasica</option>
-                  <option value="Suite">Suite</option>
-                  <option value="Ejecutiva">Ejecutiva</option>
-                </select>
-                <span id="roomMessage"></span>
-              </div>
-              <div class="row">
-                <div class="col mb-3">
-                  <label for="adulto" class="form-label">Adultos<span
-                    class="asterisk">&nbsp;*</span>&nbsp;:</label>
-                  <input type="number" class="form-control form-control-sm" id="adulto" min="1" max="10" >
-                  <span id="mensajeAdulto"></span>
+                <div class="input-group-room mb-3">
+                  <label for="rom" class="form-label">Habitacion<span class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                  <select class="form-select form-select-sm" name="room" id="room">
+                    <option selecte value="Tipo de Habitacion">Tipo de Habitacion</option>
+                    <option value="Clasica">Clasica</option>
+                    <option value="Suite">Suite</option>
+                    <option value="Ejecutiva">Ejecutiva</option>
+                  </select>
+                  <span id="roomMessage"></span>
                 </div>
-                <div class="col mb-3">
-                  <label for="kids" class="form-label">Niños:</label>
-                  <input type="number" class="form-control form-control-sm" id="kids" min="0">
-                  <span id ="mensajeMenor"></span>
+                <div class="row">
+                  <div class="col mb-3">
+                    <label for="adulto" class="form-label">Adultos<span class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                    <input type="number" class="form-control form-control-sm" id="adulto" min="1" max="10">
+                    <span id="mensajeAdulto"></span>
+                  </div>
+                  <div class="col mb-3">
+                    <label for="kids" class="form-label">Niños:</label>
+                    <input type="number" class="form-control form-control-sm" id="kids" min="0">
+                    <span id="mensajeMenor"></span>
+                  </div>
                 </div>
-              </div>
-              <div class="mb-3">
-                <label for="phone" class="form-label">Telefono<span
-                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
-                <input type="text" class="form-control form-control-sm" id="phone" min="0" max="15">
-                <span id="mensajeTel"></span>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInpuMail" class="form-label">Email<span
-                  class="asterisk">&nbsp;*</span>&nbsp;:</label>
-                <input type="email" class="form-control form-control-sm" id="email"
-                  placeholder="Escriba aqui...">
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Telefono<span class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                  <input type="text" class="form-control form-control-sm" id="phone" min="0" max="15">
+                  <span id="mensajeTel"></span>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInpuMail" class="form-label">Email<span
+                      class="asterisk">&nbsp;*</span>&nbsp;:</label>
+                  <input type="email" class="form-control form-control-sm" id="email" placeholder="Escriba aqui...">
                   <span id="mensajeMail"></span>
-              </div>
-              <p>Los campos con asteriscos(<span class="asterisk">*</span>) son obligatorios</p>
-              <br>
-              <input type="checkbox" name="terminos" id="checkbox"><span> Acepto los Términos y Condiciones</span>
-              <p id ="mensajeCheck"></p>
-              <br><br>
-              <button type="reset" class="btn btn-outline-light">Reset</button>
-              <button type="submit" class="btn btn-outline-light">Enviar</button>
-            </form>
-            
+                </div>
+                <p>Los campos con asteriscos(<span class="asterisk">*</span>) son obligatorios</p>
+                <br>
+                <input type="checkbox" name="terminos" id="checkbox"><span> Acepto los Términos y Condiciones</span>
+                <p id="mensajeCheck"></p>
+                <br><br>
+                <button type="reset" class="btn btn-outline-light">Reset</button>
+                <button type="submit" class="btn btn-outline-light">Enviar</button>
+              </form>
+
+            </div>
           </div>
-        </div>
-        <div class="row text-center mt-5">
-          <div class="col-12 d-flex align-items-center justify-content-center">
-            <div class="row payments">
-              <h1 class="linea-medio">Formas de Pago</h1>
-              <div class="col mt-5">
-                <h4>Depósito Bancario</h4>
-                <img src="../resources/img/banco.png" width="100" alt="imgBanco">
-              </div>
-              <div class="col mt-5">
-                <h4>Tarjetas de Crédito</h4>
-                <img src="../resources/img/tarjetas-de-credito.png" width="100" alt="imgTarjeta">
+          <div class="row text-center mt-5">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+              <div class="row payments">
+                <h1 class="linea-medio">Formas de Pago</h1>
+                <div class="col mt-5">
+                  <h4>Depósito Bancario</h4>
+                  <img src="../resources/img/banco.png" width="100" alt="imgBanco">
+                </div>
+                <div class="col mt-5">
+                  <h4>Tarjetas de Crédito</h4>
+                  <img src="../resources/img/tarjetas-de-credito.png" width="100" alt="imgTarjeta">
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
-   
+
     <!-- Ventana  modal -->
     <section class="confirm">
       <div id="modal" class="modal">
@@ -182,34 +175,35 @@
           <h5>Seleccione un tipo de descuento y haga click en <strong>"Aplicar"</strong></h5>
           <div class="container text-center">
             <form action="" id="myForm">
-            <div class="row">
-              <div class="col">
-                <div class="celda-promo" id="residente" data-descuento="0.1">
-                  <h2>Residente</h2>
-                  <p>Descuento</p>
-                  <h2><em>10%</em></h2>
-                  <p>Por persona</p>
+              <div class="row mb-1">
+                <div class="col">
+                  <div class="celda-promo" id="residente" data-descuento="0.1">
+                    <h2>Residente</h2>
+                    <p>Descuento</p>
+                    <h2><em>10%</em></h2>
+                    <p>Por persona</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="celda-promo" id="no-residente" data-descuento="0.2">
+                    <h2><s>Residente</s></h2>
+                    <p>Descuento</p>
+                    <h2><em>20%</em></h2>
+                    <p>Por persona</p>
+                  </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="celda-promo" id="no-residente" data-descuento="0.2">
-                  <h2><s>Residente</s></h2>
-                  <p>Descuento</p>
-                  <h2><em>20%</em></h2>
-                  <p>Por persona</p>
-                </div>
+              <h3>Detalle</h3>
+              <div class="detalle">
+                <span id="detalle"></span>
               </div>
-            </div>
-            <h3>Detalle</h3>
-            <div class="detalle">
-            <span id ="detalle"></span>
-            </div>
-            <div class="input-group input-group-lg mt-5 mb-5">
-              <span class="input-group-text" id="inputGroup-sizing-lg">Total a Pagar:</span>
-              <input type="text" class="form-control"  id="apply-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-            </div>
-            <button type="reset"  id="btn-reset"  class="btn btn-secondary">Reset</button>
-            <button type="button" class="btn btn-secondary">Aplicar</button>
+              <div class="input-group input-group-lg mt-3 mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Total a Pagar:</span>
+                <input type="text" class="form-control" id="apply-input" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-lg">
+              </div>
+              <button type="reset" id="btn-reset" class="btn btn-secondary">Reset</button>
+              <button type="button" class="btn btn-secondary">Aplicar</button>
             </form>
             <div class="btn-submit btn btn-secondary mt-2">
               <span>Confirmar</span>
@@ -218,7 +212,7 @@
           </div>
         </div>
       </div>
-</section>
+    </section>
 
     <section class="advert">
       <div class="container-fluid bg-dark">
@@ -304,17 +298,18 @@
       </small>
     </div>
   </footer>
- 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-    
-    <script src="../js/validation_form.js"></script>
-    <script src="../js/submit.js"></script>
-   
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="../js/datepicker.js"></script>
-    
-    
+
+  <script src="../js/validation_form.js"></script>
+  <script src="../js/submit.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="../js/datepicker.js"></script>
+
+
 </body>
+
 </html>

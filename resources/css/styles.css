@@ -623,7 +623,22 @@ Section.restaurant h1 {
   border: 0.063rem solid #ffffff;
   border-radius: 0.625rem;
   box-shadow: 0 0 10px 0 #ffd90092;
+ 
 }
+/*Esta parte se relaciona con el efecto scroll en javascript*/
+.hidden{
+   /*desaparezco la imagen*/
+   opacity:0;
+   transform:scale(0.8);
+   transition: all ease-out 0.8s;
+}
+
+/*hago visible la imagen */
+.mostrar {
+  opacity:1;
+  transform:scale(1);
+}
+/*******************************************************************/
 
 .grid-rest2 {
   display: flex;
