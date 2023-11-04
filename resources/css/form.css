@@ -136,7 +136,7 @@ nav label {
 /*media queries para pantallas medianas*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   nav {
-    padding: 1rem 0; /* Ajusta el espaciado interior */
+    padding: 1rem 0; /*Ajusta el espaciado interior */
   }
   nav ul li {
     margin: 0.5rem 0.8rem; /* Ajusta el espaciado entre elementos de la lista */
@@ -326,7 +326,7 @@ select.form-select {
   background: #000000b3;
   animation: animModal 0.5s ease;
 }
-
+/*animacion del modal*/
 @keyframes animModal {
   0% {
     opacity: 0.3;
@@ -372,7 +372,7 @@ select.form-select {
 .celda-promo h2 {
   font-size: 26px;
 }
-
+/*botón para cerra el modal*/
 .close {
   color:#434343;
   float: right;
@@ -380,6 +380,20 @@ select.form-select {
   font-size: 42px;
   font-weight: bold;
   cursor: pointer;
+}
+.close:hover{
+  color:rgba(139, 139, 0, 0.662);
+}
+.confirm{
+  text-align: center;
+}
+.modal-message{
+  color:rgba(139, 139, 0, 0.79);
+}
+.detalle{
+  background-color: rgba(139, 139, 0, 0.505);
+  box-shadow: 0 0 10px #434343;
+ 
 }
 /* Estilos para el botón submit animado*/
 .btn-submit{

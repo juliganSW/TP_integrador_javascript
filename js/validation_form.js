@@ -8,9 +8,7 @@ function closeModal() {
   if (confirmacion) {
     window.location.reload();
   }
-  
 }
-
 
 function validarFormulario(event) {
   event.preventDefault();
@@ -24,12 +22,13 @@ function validarFormulario(event) {
   let checkbox = document.getElementById("checkbox");
 
   //Mensajes en el documento cuando falta rellenar un campo
-  const mensajeNombre = document.getElementById("mensajeNombre")
-  const mensajeApellido = document.getElementById("mensajeApellido")
+  const mensajeNombre = document.getElementById("mensajeNombre");
+  const mensajeApellido = document.getElementById("mensajeApellido");
   const roomMessage = document.getElementById("roomMessage");
   const mensajeTel = document.getElementById("mensajeTel");
   const mensajeMail = document.getElementById("mensajeMail");
   const mensajeAdulto = document.getElementById("mensajeAdulto");
+  const mensajeMenor = document.getElementById("mensajeMenor");
   const mensajeCheck = document.getElementById("mensajeCheck");
 
   // Validar que los campos no estén vacíos
@@ -40,40 +39,45 @@ function validarFormulario(event) {
     email === "" ||
     adulto === ""
   ) {
-    alert("Campos obligatorios");
+    alert("Complete todos los campos");
     return false;
   }
 
-  // Validar que el nombre y el apellido contengan solo caracteres alfabéticos
+  //Validar que el nombre y el apellido contengan solo caracteres alfabéticos
   let regexAlfabetico = /^[a-zA-Z\s]+$/;
-  if (!(nombre.match(regexAlfabetico))) {
+  if (!nombre.match(regexAlfabetico)) {
     alert("El nombre  solo puede contener caracteres alfabéticos y espacios");
     mensajeNombre.textContent = "Complete este campo";
     mensajeNombre.style.color = "red";
+    let inputNombre = document.getElementById("name");
+    inputNombre.style.borderColor = "red";
     return false;
   }
-  if (!(apellido.match(regexAlfabetico))) {
+  if (!apellido.match(regexAlfabetico)) {
     alert("El apellido solo puede contener caracteres alfabéticos y espacios");
     mensajeApellido.textContent = "Complete este campo";
     mensajeApellido.style.color = "red";
+    let inputApellido = document.getElementById("lastName");
+    inputApellido.style.borderColor = "red";
     return false;
   }
-  
 
-  let regexNumerico = /^[0-9]+$/;
   // Validar que el teléfono solo contenga caracteres numéricos
+  let regexNumerico = /^[0-9]+$/;
   if (!telefono.match(regexNumerico)) {
     alert("El teléfono solo puede contener caracteres numéricos");
-    mensajeTel.textContent = "Complete este campo"
+    mensajeTel.textContent = "Complete este campo";
     mensajeTel.style.color = "red";
+    let inputTel = document.getElementById("phone");
+    inputTel.style.borderColor = "red";
     return false;
-  } else if(telefono.length < 10 || telefono.length > 15){
+  } else if (telefono.length < 10 || telefono.length > 15) {
     alert("Ingrese un número de teléfono válido con entre 10 y 15 dígitos");
-    mensajeTel.textContent = "Complete este Campo"
+    mensajeTel.textContent = "Complete este Campo";
     mensajeTel.style.color = "red";
+    inputTel.style.borderColor = "red";
     return false;
   }
-  
 
   //Validar el formato del correo electrónico
   let regexMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -81,36 +85,52 @@ function validarFormulario(event) {
     alert("Formato de correo electrónico inválido");
     mensajeMail.textContent = "Complete este campo";
     mensajeMail.style.color = "red";
+    inputMail = document.getElementById("email");
+    inputMail.style.borderColor = "red";
     return false;
   }
 
   //validacion de tipo de habitacion
-  
   let selectRoom = document.querySelector('select[name="room"]');
   let selectedRoom = selectRoom.options[selectRoom.selectedIndex].value;
   if (selectedRoom === "Tipo de Habitacion") {
     alert("Seleccione tipo de habitacion");
     roomMessage.textContent = "Complete este campo";
     roomMessage.style.color = "red";
+    let inputRoom = document.getElementById("room");
+    inputRoom.style.borderColor = "red";
     return false;
   }
 
   //validar cantidad de adultos y niños
   let menor = document.getElementById("kids").value;
-  if(adulto > 4 || menor > 4){
+  if (adulto > 4) {
     alert("Se excede la capacidad, debe reservar mas de una habitación");
     mensajeAdulto.textContent = "Complete este campo";
     mensajeAdulto.style.color = "red";
-    return false
+    let inputAdulto = document.getElementById("adulto");
+    inputAdulto.style.borderColor = "red";
+    return false;
+  } else if (menor === "") {
+    menor = 0;//Si la cantidad de menores es dejada en blanco, le asigna un valor de cero y me aseguro de tener un valor válido en la variable 
+    
+  } else if (menor > 5) {
+    alert("Se excede la capacidad, debe reservar mas de una habitación");
+    mensajeMenor.textContent = "Complete este campo";
+    mensajeMenor.style.color = "red";
+    let inputMenor = document.getElementById("kids");
+    inputMenor.style.borderColor = "red";
+    return false;
   }
 
   //validar el checkbox
   if (!checkbox.checked) {
     alert("Debe aceptar términos y condiciones");
     mensajeCheck.textContent = "Aceptar términos y condiciones";
-    mensajeCheck.style.color= "red";
+    mensajeCheck.style.color = "red";
     return false;
   }
+
   /**************************************************************************** */
   // Obtener la cantidad de adultos y niños
   let adultos = parseInt(adulto, 10);
@@ -141,6 +161,18 @@ function validarFormulario(event) {
   //alert("El formulario se envió exitosamente!");
   // Resetear el formulario
   //document.getElementById("form").reset();
+
+  //muestro en el documento un detalle con las variable que tengo declaradas
+  let detalle = document.getElementById("detalle");
+  detalle.innerHTML = `Nombre: ${nombre}<br>
+                      Apellido: ${apellido}<br>
+                      Email: ${email}<br>
+                      Telefono: ${telefono}<br>
+                      Adultos: ${adulto}<br>
+                      Menores: ${menor}<br>
+                      Habitacion: ${selectedRoom}`;
+                      
+
   return true; // Si todas las validaciones pasan, se envia el formulario
 }
 
@@ -157,7 +189,6 @@ let precioTotal = 0;
 let descuento = 0;
 
 // Función para aplicar el descuento
-
 let descuentoAplicado = null;
 
 function aplicarDescuento(celda) {
@@ -188,35 +219,22 @@ function aplicarDescuento(celda) {
   }
 }
 
-// Manejar clic en la celda de promoción de residentes
+//Manejo wl evento click en la celda de promoción de residentes
 promResidente.addEventListener("click", () => {
   aplicarDescuento(promResidente);
 });
 
-// Manejar clic en la celda de promoción de no residentes
+//Manejo el evento click en la celda de promoción de no residentes
 promNoResidente.addEventListener("click", () => {
   aplicarDescuento(promNoResidente);
 });
 
-// Manejar clic en el botón "Resumen"
+// Manejo clic en el botón "Resumen"
 document.querySelector("button.btn.btn-secondary:last-child").addEventListener("click", () => {
-  if (descuentoAplicado === null) {
-    alert("Debe elegir un tipo de descuento.");
-    return;
-  }
-
-  // Mostrar el resultado en el input
-  inputResultado.value = `${precioTotal.toFixed(2)} USD`;
-});
-
-
-
-
-
-
-
-
-
-
-
-
+    if (descuentoAplicado === null) {
+      alert("Debe elegir un tipo de descuento.");
+      return;
+    }
+   //Mostrar el resultado en el input con backticks
+    inputResultado.value = `${precioTotal.toFixed(2)} USD`;
+  });
