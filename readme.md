@@ -19,7 +19,6 @@ El archivo correspondiente a la página de "Reservas" es <em>form.html<em></p>
 <p>Dispara ventanas modales al hacer click en el detalle en la pagina "Habitaciones".
 El archivo correspondiente a la página "Habitaciones" es <em>rooms.html<em></p>
 
-
 **nav.js** :
 <p>Desplaza el menú de navegacion de la página principal cuando se hace scroll. Tambien cambia su color.
 El archivo correspondiente a la página principal es <em>index.html<em></p>
@@ -28,9 +27,10 @@ El archivo correspondiente a la página principal es <em>index.html<em></p>
 <p>Genera una animación en las imágenes de la página principal al hacer scroll</p>
 
 **submit.js**:
-<p>Genera una animacion en el botón de confirmacion antes de enviar el formulario en la pagina de "Reservas".
+<p>Genera una animación en el botón de confirmación antes de enviar el formulario en la página de "Reservas".</p>
 
-**validation_form.js** : Se encarga de realizar las validaciones en el formulario  principal en la página de "Reservas", tambien hace el cálculo del descuento y dispara una ventana modal. 
+**validation_form.js** : 
+<p>Se encarga de realizar las validaciones en el formulario  principal en la página de "Reservas", tambien hace el cálculo del descuento y dispara una ventana modal.</p>
 
 
 
